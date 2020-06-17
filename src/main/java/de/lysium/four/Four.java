@@ -86,7 +86,7 @@ public class Four {
         } else if (number < 20) {
             result.add(smallNumberStrings.get(number));
         } else {
-            humanize100(number, result);
+            humanizeLarge(number, result);
         }
         return String.join("-", result);
     }
@@ -104,7 +104,7 @@ public class Four {
         return result;
     }
 
-    private static void humanize100(int number, ArrayList<String> result) {
+    private static void humanizeLarge(int number, ArrayList<String> result) {
         if (number < 100) {
             result.addAll(humanizeStep(number, 10, tenths -> List.of(Four.tenths.get(tenths))));
         } else if (number < 1000) {
